@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             x:Class="PrismTemplate.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!-- text style -->
+            <Style TargetType="Label" x:Key="SmallNormalText">
+               <Setter Property="TextColor" Value="#3B3B3B" />
+               <Setter Property="FontSize">12</Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="NormalText">
+               <Setter Property="TextColor" Value="#3B3B3B" /> 
+               <Setter Property="FontSize">16</Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="BigNormalText">
+               <Setter Property="TextColor" Value="#3B3B3B" />
+               <Setter Property="FontSize">20</Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="SmallGrayText" BasedOn="{StaticResource NormalText}">
+                <Setter Property="TextColor" Value="#626262" />
+                <Setter Property="FontSize">12</Setter>
+            </Style>
+             <Style TargetType="Label" x:Key="GrayText" BasedOn="{StaticResource NormalText}">
+                <Setter Property="TextColor" Value="#626262" />
+            </Style>
+            <Style TargetType="Label" x:Key="BigGrayText" BasedOn="{StaticResource NormalText}">
+                <Setter Property="TextColor" Value="#626262" />
+                <Setter Property="FontSize">22</Setter>
+            </Style>
+        </ResourceDictionary>
+	</Application.Resources>
+</prism:PrismApplication>
