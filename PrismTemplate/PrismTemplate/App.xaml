@@ -2,11 +2,49 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
-             x:Class="PrismTemplate.App">
+             xmlns:statesbutton="clr-namespace:StatesButton.Forms;assembly=StatesButton.Forms"
+             x:Class="PrismTemplate.App"
+            xmlns:system="clr-namespace:System;assembly=mscorlib"
+                        >
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
+            <!-- Format -->
+            <system:String x:Key="CurrencyFormat">¥{0:n0}</system:String>
+            <system:String x:Key="DatetimeFormat">{0:yyyy/MM/dd HH:mm}</system:String>
+            
+            <!-- button style -->
+            <Style TargetType="statesbutton:StatesButtonControl" x:Key="Button">
+                <Setter Property="HeightRequest" Value="62" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize">16</Setter>
+                <Setter Property="HorizontalOptions">Center</Setter>
+            </Style>
+            <Style TargetType="statesbutton:StatesButtonControl" BasedOn="{StaticResource Button}">
+                <Setter Property="PressedImage" Value="bt_on.png" />
+                <Setter Property="NormalImage" Value="bt_off.png" />
+                <Setter Property="DisableImage" Value="bt_ng.png" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style TargetType="statesbutton:StatesButtonControl" x:Key="WhiteButton" BasedOn="{StaticResource Button}">
+                <Setter Property="PressedImage" Value="bt_on.png" />
+                <Setter Property="NormalImage" Value="bt_off_white.png" />
+                <Setter Property="DisableImage" Value="bt_ng.png" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style TargetType="statesbutton:StatesButtonControl" x:Key="SmallButton" BasedOn="{StaticResource Button}">
+                <Setter Property="PressedImage" Value="bt_m_on.png" />
+                <Setter Property="NormalImage" Value="bt_m_off.png" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style TargetType="statesbutton:StatesButtonControl" x:Key="SmallWhiteButton" BasedOn="{StaticResource Button}">
+                <Setter Property="PressedImage" Value="bt_m_on.png" />
+                <Setter Property="NormalImage" Value="bt_m_off_white.png" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
             <!-- text style -->
             <Style TargetType="Label" x:Key="SmallNormalText">
                <Setter Property="TextColor" Value="#3B3B3B" />

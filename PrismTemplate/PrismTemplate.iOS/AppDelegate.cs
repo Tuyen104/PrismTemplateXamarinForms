@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using Prism;
 using Prism.Ioc;
+using StatesButton.iOS.Renderers;
 using UIKit;
 using Unity;
 
@@ -26,6 +27,8 @@ namespace PrismTemplate.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            StatesButtonRenderer.Init();
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

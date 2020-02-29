@@ -163,4 +163,24 @@
       <Name>PrismTemplate</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bt_m_off_white%402x.png" />
+    <BundleResource Include="Resources\bt_on%403x.png" />
+    <BundleResource Include="Resources\bt_off_white%402x.png" />
+    <BundleResource Include="Resources\bt_m_off%403x.png" />
+    <BundleResource Include="Resources\bt_m_on%402x.png" />
+    <BundleResource Include="Resources\bt_m_on%403x.png" />
+    <BundleResource Include="Resources\bt_m_off_white%403x.png" />
+    <BundleResource Include="Resources\bt_m_off%402x.png" />
+    <BundleResource Include="Resources\bt_ng%402x.png" />
+    <BundleResource Include="Resources\bt_ng%403x.png" />
+    <BundleResource Include="Resources\bt_on%402x.png" />
+    <BundleResource Include="Resources\bt_off%403x.png" />
+    <BundleResource Include="Resources\bt_off%402x.png" />
+    <BundleResource Include="Resources\bt_off_white%403x.png" />
+    <BundleResource Include="Resources\bt_s_off%402x.png" />
+    <BundleResource Include="Resources\bt_s_off%403x.png" />
+    <BundleResource Include="Resources\bt_s_on%402x.png" />
+    <BundleResource Include="Resources\bt_s_on%403x.png" />
+  </ItemGroup>
 </Project>

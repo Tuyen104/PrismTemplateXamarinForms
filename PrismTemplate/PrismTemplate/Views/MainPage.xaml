@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PrismTemplate.MainPage">
+             x:Class="PrismTemplate.MainPage"
+             xmlns:statesbutton="clr-namespace:StatesButton.Forms;assembly=StatesButton.Forms"
+             Title="Main Page">
+    
     <ContentPage.Resources>
         <StyleSheet Source="/MyCss/GeneralCss.css" />
     </ContentPage.Resources>
-    <StackLayout>
+    <StackLayout VerticalOptions="Center">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-        <Button Text="Test" Command="{Binding TestCommand}"></Button>
+        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center"  Style="{x:StaticResource BigGrayText}"/>
+        <statesbutton:StatesButtonControl Text="Test" Command="{Binding TestCommand}"></statesbutton:StatesButtonControl>
     </StackLayout>
 </ContentPage>
