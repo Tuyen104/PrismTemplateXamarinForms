@@ -34,5 +34,14 @@
 	<string>PrismTemplate</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+        <key>CFBundleURLTypes</key>
+        <array>
+        <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+        <string>appcenter-d7b45b5d-0498-449d-a415-86ce3eb10780</string>
+        </array>
+        </dict>
+        </array>
 </dict>
 </plist>

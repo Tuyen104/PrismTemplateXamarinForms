@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Microsoft.AppCenter.Distribute;
 using Prism;
 using Prism.Ioc;
 using StatesButton.iOS.Renderers;
@@ -28,6 +29,7 @@ namespace PrismTemplate.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             StatesButtonRenderer.Init();
+            Distribute.DontCheckForUpdatesInDebug();
 
             LoadApplication(new App(new iOSInitializer()));
 

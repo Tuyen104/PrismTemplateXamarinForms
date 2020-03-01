@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Distribute;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PrismTemplate
@@ -22,9 +23,7 @@ namespace PrismTemplate
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            AppCenter.Start("ios=d7b45b5d-0498-449d-a415-86ce3eb10780;" +
-                  "android=646efe20-b1f5-4369-bd06-3eb9743b19e0",
-                  typeof(Analytics), typeof(Crashes));
+            
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -37,6 +36,15 @@ namespace PrismTemplate
             containerRegistry.RegisterSingleton<IApiService, ApiService>();
             containerRegistry.RegisterSingleton<IConfigurationService, ConfigurationService>();
             containerRegistry.RegisterSingleton<IDialogService, DialogService>();
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            AppCenter.Start("ios=d7b45b5d-0498-449d-a415-86ce3eb10780;" +
+                  "android=646efe20-b1f5-4369-bd06-3eb9743b19e0",
+                  typeof(Analytics), typeof(Crashes), typeof(Distribute));
+            Distribute.SetEnabledAsync(true);
         }
     }
 }

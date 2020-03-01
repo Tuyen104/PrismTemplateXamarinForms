@@ -6,6 +6,7 @@ using Acr.UserDialogs;
 using Prism;
 using Prism.Ioc;
 using StatesButton.Android.Renderers;
+using Microsoft.AppCenter.Distribute;
 
 namespace PrismTemplate.Droid
 {
@@ -23,6 +24,7 @@ namespace PrismTemplate.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             StatesButtonRenderer.Init();
+            Distribute.SetEnabledForDebuggableBuild(true);
 
             LoadApplication(new App(new AndroidInitializer()));
         }
