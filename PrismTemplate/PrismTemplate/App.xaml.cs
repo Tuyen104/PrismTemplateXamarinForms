@@ -10,6 +10,7 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Distribute;
+using Microsoft.AppCenter.Push;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PrismTemplate
@@ -30,7 +31,7 @@ namespace PrismTemplate
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<NextPage>();
+            containerRegistry.RegisterForNavigation<NextPage, NextPageViewModel>();
 
             //register services
             containerRegistry.RegisterSingleton<IApiService, ApiService>();
@@ -38,13 +39,19 @@ namespace PrismTemplate
             containerRegistry.RegisterSingleton<IDialogService, DialogService>();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
             base.OnStart();
             AppCenter.Start("ios=d7b45b5d-0498-449d-a415-86ce3eb10780;" +
                   "android=646efe20-b1f5-4369-bd06-3eb9743b19e0",
-                  typeof(Analytics), typeof(Crashes), typeof(Distribute));
-            Distribute.SetEnabledAsync(true);
+                  typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
+            await Distribute.SetEnabledAsync(true);
+
+            bool didAppCrashed = await Crashes.HasCrashedInLastSessionAsync();
+            if (didAppCrashed)
+            {
+                var crashReport = await Crashes.GetLastSessionCrashReportAsync();
+            }
         }
     }
 }
