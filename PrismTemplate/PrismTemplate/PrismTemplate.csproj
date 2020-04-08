@@ -32,5 +32,6 @@
     <Folder Include="Services\" />
     <Folder Include="Behaviors\" />
     <Folder Include="MyCss\" />
+    <Folder Include="Constants\" />
   </ItemGroup>
 </Project>
