@@ -2,8 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PrismTemplate.Views.NextPage"
+             xmlns:statesbutton="clr-namespace:StatesButton.Forms;assembly=StatesButton.Forms"
              Title="Next Page">
     <ContentPage.Content>
-        <Label Text="This is my Text"/>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Received message:" FontSize="8"/>
+                <Label Text="(nothing yet)" x:Name="lblMsg" FontSize="8"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Send:" FontSize="8" VerticalTextAlignment="Center"/>
+                <Entry x:Name="txtMsg" Placeholder="Enter some message..." FontSize="8" WidthRequest="150"/>
+            </StackLayout>
+            <statesbutton:StatesButtonControl x:Name="btnSend" Text="Send" FontSize="8" HeightRequest="50" ></statesbutton:StatesButtonControl>
+
+        </StackLayout>
+       
     </ContentPage.Content>
 </ContentPage>

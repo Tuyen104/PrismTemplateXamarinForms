@@ -17,7 +17,9 @@ namespace PrismTemplate
 {
     public partial class App : PrismApplication
     {
-        //public App() : this(null) { }
+        public const string NotifReceivedKey = "NotifReceived";
+
+        public App() : this(null) { }
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
