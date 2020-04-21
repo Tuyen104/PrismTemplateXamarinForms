@@ -9,6 +9,11 @@ using StatesButton.Android.Renderers;
 using Microsoft.AppCenter.Distribute;
 using Android.Util;
 using Android.Gms.Common;
+using Firebase.Iid;
+using Firebase.Messaging;
+using Xamarin.Forms;
+using System;
+using System.Threading.Tasks;
 
 namespace PrismTemplate.Droid
 {
@@ -36,7 +41,6 @@ namespace PrismTemplate.Droid
                 }
             }
 
-            IsPlayServicesAvailable();
             CreateNotificationChannel();
 
             UserDialogs.Init(this);
@@ -48,6 +52,15 @@ namespace PrismTemplate.Droid
             Distribute.SetEnabledForDebuggableBuild(true);
 
             LoadApplication(new App(new AndroidInitializer()));
+
+            IsPlayServicesAvailable();
+
+            Task.Run(() =>
+            {
+                FirebaseInstanceId.Instance.DeleteInstanceId();
+                Console.WriteLine($"Force token: {FirebaseInstanceId.Instance.Token}");
+            });
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -102,6 +115,44 @@ namespace PrismTemplate.Droid
 
             var notificationManager = (NotificationManager)GetSystemService(NotificationService);
             notificationManager.CreateNotificationChannel(channel);
+        }
+    }
+
+    [Service]
+    [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
+    public class MyFirebaseIIDService : FirebaseInstanceIdService
+    {
+        public override void OnTokenRefresh()
+        {
+            base.OnTokenRefresh();
+            var refreshedToken = FirebaseInstanceId.Instance.Token;
+            Console.WriteLine($"Token received: {refreshedToken}");
+            SendRegistrationToServer(refreshedToken);
+        }
+
+        void SendRegistrationToServer(string token)
+        {
+            // later
+        }
+    }
+
+    [Service]
+    [IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
+    public class MyFirebaseMessagingService : FirebaseMessagingService
+    {
+        public override void OnMessageReceived(RemoteMessage message)
+        {
+            base.OnMessageReceived(message);
+
+            try
+            {
+                var msg = message.GetNotification().Body;
+                MessagingCenter.Send<object, string>(this, App.NotifReceivedKey, msg);
+            }
+            catch(Exception ex)
+            {
+                //
+            }
         }
     }
 }

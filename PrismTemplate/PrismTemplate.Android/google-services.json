@@ -1,63 +1,34 @@
 {
   "project_info": {
-    "project_number": "728066422625",
-    "firebase_url": "https://prismtemplatedemo.firebaseio.com",
-    "project_id": "prismtemplatedemo",
-    "storage_bucket": "prismtemplatedemo.appspot.com"
+    "project_number": "906652552775",
+    "firebase_url": "https://xamunotifandroid-7c4ab.firebaseio.com",
+    "project_id": "xamunotifandroid-7c4ab",
+    "storage_bucket": "xamunotifandroid-7c4ab.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:728066422625:android:5a2e91c0fe606d34aab720",
+        "mobilesdk_app_id": "1:906652552775:android:ebc86f630dd78085f52b62",
         "android_client_info": {
-          "package_name": "com.companyname.PrismTemplate"
+          "package_name": "com.xamarin.xamarinnotif"
         }
       },
       "oauth_client": [
         {
-          "client_id": "728066422625-deci7075u8vafb0tn6a4qcp3c33vjjb6.apps.googleusercontent.com",
+          "client_id": "906652552775-mbefrcfnpqa9kmj4e4bpfh7ptjv7bhov.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC-hn_hbKGXBQgrZToVT4xe6Rrs8mbmWpw"
+          "current_key": "AIzaSyDCM41WTO7V3UPdm-rhPFNslyJzHp6SLN8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "728066422625-deci7075u8vafb0tn6a4qcp3c33vjjb6.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:728066422625:android:a98513c86cec80a5aab720",
-        "android_client_info": {
-          "package_name": "com.companyname.prismtemplate"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "728066422625-deci7075u8vafb0tn6a4qcp3c33vjjb6.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC-hn_hbKGXBQgrZToVT4xe6Rrs8mbmWpw"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "728066422625-deci7075u8vafb0tn6a4qcp3c33vjjb6.apps.googleusercontent.com",
+              "client_id": "906652552775-mbefrcfnpqa9kmj4e4bpfh7ptjv7bhov.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
